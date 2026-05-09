@@ -60,44 +60,25 @@ function AnalyticsSection({
                 No expenses yet.
               </p>
             ) : (
-              <ResponsiveContainer
-                width="100%"
-                height={240}
-              >
-                <PieChart>
-                  <Pie
-                    data={expenseByCategory}
-                    dataKey="value"
-                    nameKey="name"
-                    outerRadius={85}
-                    label
-                  >
-                    {expenseByCategory.map(
-                      (
-                        entry,
-                        index
-                      ) => (
-                        <Cell
-                          key={index}
-                          fill={
-                            entry.color
-                          }
-                        />
-                      )
-                    )}
-                  </Pie>
+              <div className="mobile-chart-box">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={expenseByCategory}
+                      dataKey="value"
+                      nameKey="name"
+                      outerRadius={75}
+                      label
+                    >
+                      {expenseByCategory.map((entry, index) => (
+                        <Cell key={index} fill={entry.color} />
+                      ))}
+                    </Pie>
 
-                  <Tooltip
-                    formatter={(
-                      value
-                    ) =>
-                      `₱${Number(
-                        value
-                      ).toFixed(2)}`
-                    }
-                  />
-                </PieChart>
-              </ResponsiveContainer>
+                    <Tooltip formatter={(value) => `₱${Number(value).toFixed(2)}`} />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
             )}
           </div>
 
@@ -106,38 +87,24 @@ function AnalyticsSection({
               Income vs Expenses
             </h3>
 
-            <ResponsiveContainer
-              width="100%"
-              height={240}
-            >
-              <BarChart
-                data={
-                  incomeExpenseData
-                }
-              >
-                <XAxis dataKey="name" />
-                <YAxis />
+            <div className="mobile-chart-box">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={incomeExpenseData}>
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip formatter={(value) => `₱${Number(value).toFixed(2)}`} />
 
-                <Tooltip
-                  formatter={(
-                    value
-                  ) =>
-                    `₱${Number(
-                      value
-                    ).toFixed(2)}`
-                  }
-                />
-
-                <Bar dataKey="amount" radius={[10, 10, 0, 0]}>
-                  {incomeExpenseData.map((entry, index) => (
-                    <Cell
-                      key={index}
-                      fill={entry.name === "Income" ? "#22c55e" : "#ef4444"}
-                    />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+                  <Bar dataKey="amount" radius={[12, 12, 0, 0]}>
+                    {incomeExpenseData.map((entry, index) => (
+                      <Cell
+                        key={index}
+                        fill={entry.name === "Income" ? "#22c55e" : "#ef4444"}
+                      />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
           </div>
         </div>
       )}

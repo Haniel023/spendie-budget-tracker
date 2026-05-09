@@ -1736,3 +1736,129 @@ overview-widget,
   background: #1e293b;
   color: white;
 }
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+}
+
+.app-shell {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.section-card,
+.balance-card,
+.overview-grid,
+.analytics-grid,
+.chart-card,
+.transaction-item,
+.budget-card,
+.goal-card,
+.member-card {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 700px) {
+  .section-card,
+  .balance-card,
+  .chart-card,
+  .transaction-item,
+  .budget-card,
+  .member-card,
+  .overview-widget,
+  .analytics-widget {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.mobile-chart-box {
+  width: 100%;
+  height: 280px;
+  min-height: 280px;
+  overflow: visible;
+}
+
+.recharts-wrapper,
+.recharts-surface {
+  max-width: none !important;
+}
+
+.chart-card {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .mobile-chart-box {
+    height: 260px;
+    min-height: 260px;
+  }
+}
+
+/* FIX APP WIDTH ON ALL SCREEN SIZES */
+
+.app-shell {
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+@media (max-width: 700px) {
+  .app-shell {
+    padding: 16px 14px 150px;
+  }
+}
+
+/* FIX ANALYTICS RESPONSIVE LAYOUT */
+
+.analytics-grid,
+.analytics-summary-grid {
+  width: 100%;
+}
+
+.chart-card,
+.analytics-widget,
+.top-category-item {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .analytics-grid,
+  .analytics-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-card {
+    width: 100%;
+    min-height: 320px;
+  }
+
+  .mobile-chart-box {
+    width: 100%;
+    height: 260px;
+    min-height: 260px;
+  }
+
+  .top-category-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .top-category-row strong,
+  .top-category-row span {
+    word-break: break-word;
+  }
+}

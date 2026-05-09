@@ -65,35 +65,29 @@ function MonthlyTrendChart({
           height: 300,
         }}
       >
-        <ResponsiveContainer>
-          <LineChart data={chartData}>
-            <XAxis dataKey="month" />
+        <div className="mobile-chart-box">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={chartData}>
+              <XAxis dataKey="month" />
+              <YAxis />
+              <Tooltip formatter={(value) => `₱${Number(value).toFixed(2)}`} />
 
-            <YAxis />
+              <Line
+                type="monotone"
+                dataKey="income"
+                stroke="#22c55e"
+                strokeWidth={3}
+              />
 
-            <Tooltip
-              formatter={(value) =>
-                `₱${Number(
-                  value
-                ).toFixed(2)}`
-              }
-            />
-
-            <Line
-              type="monotone"
-              dataKey="income"
-              stroke="#22c55e"
-              strokeWidth={3}
-            />
-
-            <Line
-              type="monotone"
-              dataKey="expenses"
-              stroke="#ef4444"
-              strokeWidth={3}
-            />
-          </LineChart>
-        </ResponsiveContainer>
+              <Line
+                type="monotone"
+                dataKey="expenses"
+                stroke="#ef4444"
+                strokeWidth={3}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     </section>
   );
