@@ -57,14 +57,14 @@ function SpaceModal({
 
         <button
           type="submit"
-          className="primary-btn"
+          className="modal-submit-btn"
         >
           Create Space
         </button>
 
         <button
           type="button"
-          className="cancel-btn"
+          className="modal-cancel-btn"
           onClick={onClose}
         >
           Cancel

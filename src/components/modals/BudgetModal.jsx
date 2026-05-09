@@ -61,13 +61,13 @@ function BudgetModal({
           required
         />
 
-        <button type="submit" className="primary-btn">
+        <button type="submit" className="modal-submit-btn">
           {editingBudget ? "Save Changes" : "Save Budget"}
         </button>
 
         <button
           type="button"
-          className="cancel-btn"
+          className="modal-cancel-btn"
           onClick={onClose}
         >
           Cancel

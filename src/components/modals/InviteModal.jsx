@@ -20,11 +20,11 @@ function InviteModal({
           required
         />
 
-        <button type="submit" className="primary-btn">
+        <button type="submit" className="modal-submit-btn">
           Send Invite
         </button>
 
-        <button type="button" className="cancel-btn" onClick={onClose}>
+        <button type="button" className="modal-cancel-btn" onClick={onClose}>
           Cancel
         </button>
       </form>

@@ -116,11 +116,11 @@ function RecurringModal({
           </div>
         )}
 
-        <button type="submit" className="primary-btn">
+        <button type="submit" className="modal-submit-btn">
           Save Recurring
         </button>
 
-        <button type="button" className="cancel-btn" onClick={onClose}>
+        <button type="button" className="modal-cancel-btn" onClick={onClose}>
           Cancel
         </button>
       </form>

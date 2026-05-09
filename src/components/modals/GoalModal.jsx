@@ -74,14 +74,14 @@ function GoalModal({
 
         <button
           type="submit"
-          className="primary-btn"
+          className="modal-submit-btn"
         >
           {editingGoal ? "Save Changes" : "Save Goal"}
         </button>
 
         <button
           type="button"
-          className="cancel-btn"
+          className="modal-cancel-btn"
           onClick={onClose}
         >
           Cancel

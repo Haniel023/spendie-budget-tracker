@@ -115,7 +115,7 @@ function TransactionModal({
 
         <button
           type="submit"
-          className="primary-btn"
+          className="modal-submit-btn"
         >
           {editingTransaction
             ? "Save Changes"
@@ -124,7 +124,7 @@ function TransactionModal({
 
         <button
           type="button"
-          className="cancel-btn"
+          className="modal-cancel-btn"
           onClick={onClose}
         >
           Cancel
