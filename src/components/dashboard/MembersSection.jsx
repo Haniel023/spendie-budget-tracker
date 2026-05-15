@@ -21,7 +21,7 @@ function MembersSection({ activeSpace, members, onInvite }) {
         {members.map((member) => (
           <div className="member-card" key={member.id}>
             <div className="avatar">
-              {member.profiles?.full_name?.charAt(0)}
+              {member.profiles?.full_name?.charAt(0).toUpperCase() ?? "?"}
             </div>
 
             <div>

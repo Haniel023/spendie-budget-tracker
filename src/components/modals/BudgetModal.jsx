@@ -9,7 +9,7 @@ function BudgetModal({
   if (!show) return null;
 
   return (
-    <div className="modal-overlay">
+    <div className="modal-overlay" role="dialog" aria-modal="true" aria-label={editingBudget ? "Edit Budget" : "Create Budget"}>
       <form className="transaction-modal" onSubmit={onSubmit}>
         <h2>{editingBudget ? "Edit Budget" : "Create Budget"}</h2>
 

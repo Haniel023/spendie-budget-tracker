@@ -1,3 +1,19 @@
+const ALERT_ICONS = {
+  danger: "⚠️",
+  warning: "🔔",
+  info: "💡",
+  goal: "🎯",
+  success: "🎉",
+};
+
+const ALERT_CLASSES = {
+  danger: "alert-card danger-alert",
+  warning: "alert-card warning-alert",
+  info: "alert-card info-alert",
+  goal: "alert-card goal-alert",
+  success: "alert-card success-alert",
+};
+
 function AlertSection({ alerts }) {
   return (
     <section className="section-card">
@@ -19,16 +35,11 @@ function AlertSection({ alerts }) {
           {alerts.map((alert, index) => (
             <div
               key={index}
-              className={
-                alert.type === "danger"
-                  ? "alert-card danger-alert"
-                  : "alert-card warning-alert"
-              }
+              className={ALERT_CLASSES[alert.type] ?? "alert-card"}
             >
               <div className="alert-icon">
-                {alert.type === "danger" ? "⚠" : "🔔"}
+                {ALERT_ICONS[alert.type] ?? "💡"}
               </div>
-
               <p>{alert.message}</p>
             </div>
           ))}

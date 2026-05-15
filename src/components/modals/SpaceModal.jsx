@@ -10,7 +10,7 @@ function SpaceModal({
   if (!show) return null;
 
   return (
-    <div className="modal-overlay">
+    <div className="modal-overlay" role="dialog" aria-modal="true" aria-label="Create Shared Space">
       <form
         className="transaction-modal"
         onSubmit={onSubmit}

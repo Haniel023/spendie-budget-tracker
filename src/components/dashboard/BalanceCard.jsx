@@ -6,7 +6,7 @@ function BalanceCard({ summary }) {
       <div className="balance-top">
         <div>
           <p>Total Balance</p>
-          <h2>₱{summary.balance.toFixed(2)}</h2>
+          <h2>₱{(summary.balance ?? 0).toFixed(2)}</h2>
         </div>
 
         <div className="wallet-icon">
@@ -20,7 +20,7 @@ function BalanceCard({ summary }) {
             <TrendingUp size={16} />
           </span>
           <p>Income</p>
-          <strong>₱{summary.income.toFixed(2)}</strong>
+          <strong>₱{(summary.income ?? 0).toFixed(2)}</strong>
         </div>
 
         <div>
@@ -28,7 +28,7 @@ function BalanceCard({ summary }) {
             <TrendingDown size={16} />
           </span>
           <p>Expenses</p>
-          <strong>₱{summary.expenses.toFixed(2)}</strong>
+          <strong>₱{(summary.expenses ?? 0).toFixed(2)}</strong>
         </div>
       </div>
     </section>

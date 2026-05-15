@@ -9,7 +9,7 @@ function GoalModal({
   if (!show) return null;
 
   return (
-    <div className="modal-overlay">
+    <div className="modal-overlay" role="dialog" aria-modal="true" aria-label={editingGoal ? "Edit Goal" : "Create Goal"}>
       <form
         className="transaction-modal"
         onSubmit={onSubmit}

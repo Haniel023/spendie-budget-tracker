@@ -9,7 +9,7 @@ function TransactionModal({
   if (!show) return null;
 
   return (
-    <div className="modal-overlay">
+    <div className="modal-overlay" role="dialog" aria-modal="true" aria-label={editingTransaction ? "Edit Transaction" : "Add Transaction"}>
       <form
         className="transaction-modal"
         onSubmit={onSubmit}

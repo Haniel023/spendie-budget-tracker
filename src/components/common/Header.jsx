@@ -28,11 +28,15 @@ function Header({
           }
         />
 
-        <button className="icon-btn" onClick={onToggleDarkMode}>
+        <button
+          className="icon-btn"
+          onClick={onToggleDarkMode}
+          aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+        >
           {darkMode ? "☀️" : "🌙"}
         </button>
 
-        <button className="icon-btn danger" onClick={onLogout}>
+        <button className="icon-btn danger" onClick={onLogout} aria-label="Log out">
           <LogOut size={18} />
         </button>
       </div>

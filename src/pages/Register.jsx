@@ -55,8 +55,9 @@ function Register() {
       ]);
 
       if (profileError) {
+        await supabase.auth.signOut();
         setLoading(false);
-        setMessage(profileError.message);
+        setMessage("Registration failed while saving profile. Please try again.");
         return;
       }
 
@@ -74,8 +75,9 @@ function Register() {
         .single();
 
       if (spaceError) {
+        await supabase.auth.signOut();
         setLoading(false);
-        setMessage(spaceError.message);
+        setMessage("Registration failed while creating your space. Please try again.");
         return;
       }
 
@@ -87,8 +89,9 @@ function Register() {
       ]);
 
       if (memberError) {
+        await supabase.auth.signOut();
         setLoading(false);
-        setMessage(memberError.message);
+        setMessage("Registration failed while setting up membership. Please try again.");
         return;
       }
     }

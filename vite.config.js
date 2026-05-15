@@ -9,8 +9,8 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "apple-touch-icon.png"],
       manifest: {
-        name: "Budget Tracker",
-        short_name: "Budget",
+        name: "Spendie",
+        short_name: "Spendie",
         description: "Personal and shared budget tracker app",
         theme_color: "#4f46e5",
         background_color: "#0f172a",

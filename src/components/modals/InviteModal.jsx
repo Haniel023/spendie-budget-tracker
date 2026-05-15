@@ -8,7 +8,7 @@ function InviteModal({
   if (!show) return null;
 
   return (
-    <div className="modal-overlay">
+    <div className="modal-overlay" role="dialog" aria-modal="true" aria-label="Invite Member">
       <form className="transaction-modal" onSubmit={onSubmit}>
         <h2>Invite Member</h2>
 

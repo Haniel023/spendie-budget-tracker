@@ -42,17 +42,11 @@ function GoalsSection({
       ) : (
         <div className="budget-list">
           {goals.map((goal) => {
-            const percentage =
-              Math.min(
-                (goal.current_amount /
-                  goal.target_amount) *
-                100,
-                100
-              );
+            const target = Number(goal.target_amount);
+            const current = Number(goal.current_amount);
+            const percentage = target > 0 ? Math.min((current / target) * 100, 100) : 0;
 
-            const completed =
-              goal.current_amount >=
-              goal.target_amount;
+            const completed = current >= target;
 
             return (
               <div
